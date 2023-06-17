@@ -2,7 +2,7 @@ const questions = [{
     type: 'input',
     name: 'shape',
     message: 'Please select a shape',
-    choices: [Circle, Square, Triangle],
+    choices: ['Circle', 'Square', 'Triangle'],
 }, {
     type: 'input',
     name:'shapeColour',
