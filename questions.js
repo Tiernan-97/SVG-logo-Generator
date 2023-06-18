@@ -1,8 +1,8 @@
 const questions = [{
-    type: 'input',
+    type: 'list',
     name: 'shape',
     message: 'Please select a shape',
-    choices: ['Circle', 'Square', 'Triangle'],
+    choices: ['circle', 'square', 'triangle'],
 }, {
     type: 'input',
     name:'shapeColour',
@@ -16,3 +16,5 @@ const questions = [{
     name:'textColour',
     message: 'Please enter the colour you would like for your text',
 }]
+
+module.exports = questions

@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const questions = require('./questions');
 const { writeFile } = require('fs/promises');
 const { Square, Circle, Triangle } = require('./shapes');
-const { SVG, Text } = require('./SVG');
+const { SVG, LogoText } = require('./SVG');
 
 
 class CLI {
@@ -14,7 +14,8 @@ class CLI {
       .then((response) => {
         const svg = this.generateSVG(response);
         const markup = svg.render();
-        return writeMarkup(svg, markup);
+        console.log(markup);
+        return writeFile("logo.svg", markup);
       })
       .then(() => console.log('Generated logo.svg'))
       .catch((err) => {
@@ -24,7 +25,7 @@ class CLI {
   }
 
   generateSVG(inputs) {
-    const logoText = new Text(inputs.text, inputs.textColour);
+    const logoText = new LogoText(inputs.text, inputs.textColour);
 
     switch (inputs.shape) {
         case "circle":
@@ -37,7 +38,7 @@ class CLI {
             const triangle = new Triangle(inputs.shapeColour)
             return new SVG(triangle, logoText);
     }
-}
+  }
 }
 
 

@@ -5,10 +5,11 @@ class SVG {
     }
     render() {
         const svg = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">${this.shape.render()}${this.text.render()}</svg>`
+        return svg;
     }
 }
 
-class Text {
+class LogoText {
     constructor(text, colour) {
         this.text = text;
         this.colour = colour;
@@ -18,4 +19,4 @@ class Text {
     }
 }
 
-exports.module = {SVG, Text};
+module.exports = {SVG, LogoText};

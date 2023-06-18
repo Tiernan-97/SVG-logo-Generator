@@ -37,4 +37,4 @@ class Triangle extends Shapes {
     }
 }
 
-exports.modules = {Square, Circle, Triangle};
+module.exports = {Square, Circle, Triangle};
